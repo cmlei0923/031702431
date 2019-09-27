@@ -63,7 +63,6 @@ if num=='3':
     al = requests.get(url).text
     print(al)
     al = re.search('<province>(.*?)</province>.*?<city>(.*?)</city>.*?<district>(.*?)</district>.*?<township>(.*?)</township>', al)
-    print(loc_list)
     if loc_list[0] == '':
         if al.group(1) in zxs:
             loc_list[0] = al.group(1)[:2]
