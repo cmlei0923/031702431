@@ -61,7 +61,6 @@ if num=='3':
     al = re.search('\d+.?\d+,\d+.?\d+', al).group()
     url = 'https://restapi.amap.com/v3/geocode/regeo?output=xml&location=' + al + '&key=55102a2c4b79bf8c87cab849177e086a&radius=1000&extensions=base'
     al = requests.get(url).text
-    print(al)
     al = re.search('<province>(.*?)</province>.*?<city>(.*?)</city>.*?<district>(.*?)</district>.*?<township>(.*?)</township>', al)
     if loc_list[0] == '':
         if al.group(1) in zxs:
